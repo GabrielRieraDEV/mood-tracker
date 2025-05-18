@@ -297,9 +297,13 @@ function updateMoodStats() {
         });
     });
     
+    // Clear previous content
+    statsEl.innerHTML = '';
+    summaryEl.innerHTML = '';
+    
     if (allEntries.length === 0) {
-        statsEl.innerHTML = '<p class="text-gray-500 text-center mt-8">No mood data yet. Start tracking your mood to see statistics!</p>';
-        summaryEl.innerHTML = '';
+        // Show message in the stats container instead of hiding the section
+        statsEl.innerHTML = '<p class="text-gray-500 text-center py-8">No mood data yet. Start tracking your mood to see statistics!</p>';
         return;
     }
     
