@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your daily mood and emotions with this simple and intuitive mood tracker.">
+    <meta name="theme-color" content="#4f46e5">
+    <meta property="og:title" content="Mood Tracker">
+    <meta property="og:description" content="Track your daily mood and emotions with this simple and intuitive mood tracker.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Mood Tracker - Track Your Daily Emotions</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😊</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😊</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700">Mood Tracker</h1>
+            <p class="text-gray-600">Track your daily emotions and see your mood patterns</p>
+        </header>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="text-center mb-6">
+                <h2 id="mood-prompt" class="text-xl font-semibold mb-2">How are you feeling today?</h2>
+                <div class="flex justify-center space-x-4 mb-4" id="mood-buttons">
+                    <!-- Mood buttons will be inserted here by JavaScript -->
+                </div>
+                <div class="mt-4">
+                    <textarea id="mood-note" class="w-full p-2 border rounded-md" 
+                              placeholder="Add a note about your day (optional)" rows="3"></textarea>
+                    <button id="save-mood" class="mt-2" disabled>
+                        Save Mood
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4">Monthly Overview</h2>
+                <div id="calendar" class="grid grid-cols-7 gap-1">
+                    <!-- Calendar days will be inserted here by JavaScript -->
+                </div>
+                <div class="mt-4 flex justify-between">
+                    <button id="prev-month" class="text-indigo-600 hover:text-indigo-800">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <h3 id="current-month" class="font-medium">May 2023</h3>
+                    <button id="next-month" class="text-indigo-600 hover:text-indigo-800">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4">Mood Statistics</h2>
+                <div id="mood-stats" class="h-64">
+                    <!-- Mood statistics chart will be inserted here by JavaScript -->
+                </div>
+                <div id="mood-summary" class="mt-4 text-center">
+                    <!-- Mood summary will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">Recent Entries</h2>
+            <div id="recent-entries">
+                <!-- Recent mood entries will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
